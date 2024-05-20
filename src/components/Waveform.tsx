@@ -25,11 +25,6 @@ export default function Waveform({ audioFile, onRegionUpdate }: WaveformProps) {
       wavesurfer.loadBlob(audioFile);
       waveformRef.current = wavesurfer;
 
-      wavesurfer.on("region-updated", (region) => {
-        if (onRegionUpdate) {
-          onRegionUpdate(region.start, region.end);
-        }
-      });
 
       return () => wavesurfer.destroy(); // Clean up on component unmount
     }
