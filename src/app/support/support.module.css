@@ -1,0 +1,161 @@
+.supportPage {
+    --bg-color: 38 38 51;
+    background-color: rgb(var(--bg-color));
+    display: grid;
+    grid-template-rows: 5rem auto min-content;
+    width: calc(100% - 5rem);
+}
+
+.wrapper {
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    left: 0;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: min-content min-content;
+    align-items: center;
+    justify-content: end;
+    height: 5rem;
+    /* margin-right: 1rem; */
+    background-color: #17171e;
+}
+
+.btn {
+    --color: 238 238 238;
+    --bg-color: 38 38 51;
+    --padding-block: .4rem;
+    --padding-inline: 1.5rem;
+    --border-width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    padding: calc(var(--padding-block) - var(--border-width)) calc(var(--padding-inline) - var(--border-width));
+    color: rgba(var(--color) / 100%);
+    font-size: 1rem;
+    line-height: 2rem;
+    white-space: nowrap;
+    background-color: rgba(var(--bg-color) / 100%);
+    border-color: rgb(var(--bg-color));
+    border-style: solid;
+    border-width: var(--border-width);
+    border-radius: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+.add{
+    margin-left: .4rem;
+}
+.reviews {
+    margin: 0 5rem;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: 0;
+    list-style-type: none;
+}
+
+.reviewItem {
+    display: grid;
+    grid-gap: .2rem 1rem;
+    grid-template:
+        "photo name date info " min-content
+        "photo message message message" auto / auto auto auto 1fr;
+    align-items: center;
+    padding: 2rem 0;
+    color: #d8d8e2;
+    border-bottom: solid 1px #262633;
+}
+.photo{
+    grid-area: photo;
+    align-self: start;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-color: #262633;
+    border-radius: 50%;
+}
+.name {
+    grid-area: name;
+    align-self: end;
+    color: #009688;
+    font-weight: 800;
+    font-size: .9rem;
+    line-height: 1rem;
+}
+
+.date {
+    grid-area: date;
+    align-self: end;
+    color: #615f6b;
+    font-size: .75rem;
+    line-height: 1rem;
+}
+.message{
+    grid-area: message;
+    margin-top: 0;
+    color: #b7b7b7;
+    font-weight: 300;
+}
+.modal{
+    left: 5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    display: grid;
+    background: #17171e;
+}
+.cancel{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    width: 5rem;
+    height: 5rem;
+    height: 5rem;
+    padding: 0;
+    background-color: transparent;
+}
+.form{
+    width: 50%;
+    min-width: 35rem;
+    display: grid;
+    gap: 1.5rem;
+    padding: 5vw;
+    color: #999;
+    background-color: #1c1c26;
+    border-radius: .5rem;
+    align-self: center;
+    justify-self: center;
+}
+.txtarea{
+    height: 10rem;
+    padding: 1rem;
+    color: #eee;
+    background: #17171e;
+    border: none;
+    overflow: auto;
+    margin: 0;
+    font-size: 100%;
+    font-family: inherit;
+    line-height: 1.15;
+}
+.buttons{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.white{
+    min-width: 4rem;
+    --color: 23 23 30;
+    --bg-color: 211 211 223;
+    cursor: pointer;
+}
+.link{
+    min-width: 4rem;
+    background-color: transparent;
+
+}

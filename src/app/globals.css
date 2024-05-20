@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 38, 38, 51;
+    --accent-rgb: 147, 51, 234;
+  }
+
+  /* ... (Any other custom base styles you might have) */
+}
+
+@layer components {
+  body {
+    color: rgb(var(--foreground-rgb));
+    background-color: rgb(var(--background-rgb));
+    font-family: Inter, sans-serif;
+  }
+
+  /* Sidebar Styles */
+  .sidebar {
+    background-color: rgb(var(--background-rgb));
+    color: rgb(var(--foreground-rgb));
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Smoother transition for width on larger screens */
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-link.active {
+    background-color: rgb(var(--accent-rgb));
+    color: white;
+    position: relative; /* For the arrow positioning */
+  }
+  .content-area {
+    @apply p-8; /* Add padding to the content area */
+  }
+
+  .main-heading {
+    @apply text-3xl lg:text-4xl font-bold mb-4 text-center;
+  }
+
+  .subheading {
+    @apply text-gray-300 text-center text-balance max-w-2xl mx-auto mb-8;
+  }
+
+  .clip-button {
+    @apply bg-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded shadow;
+  }
+  .sidebar-link.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid white;
+  }
+
+  .sidebar-link svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .sidebar-link:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-link:last-child {
+    margin-bottom: 10rem; /* Adjust spacing at the bottom as needed */
+  }
+
+  /* Menu Button Styles */
+  .menu-button {
+    @apply fixed left-0 top-0 z-50 p-4 bg-gray-800 rounded-r-full focus:outline-none hover:bg-gray-700 transition-all duration-300;
+    width: 2.5rem; 
+    height: 2.5rem;
+  }
+
+  .menu-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+    .record-button,
+    .stop-button,
+    .download-button {
+      @apply text-white font-bold py-2 px-4 rounded transition-colors duration-200;
+    }
+  
+    .record-button {
+      @apply bg-red-500 hover:bg-red-700;
+    }
+  
+    .stop-button {
+      @apply bg-red-500 hover:bg-red-700;
+      /* You can add animation or visual effects here if you'd like */
+    }
+  
+    .download-button {
+      @apply bg-green-500 hover:bg-green-700;
+    }
+  
+  
+
+  /* Content Area Styles */
+  .content-area {
+    padding: 3rem;
+  }
+
+  .main-heading {
+    @apply text-3xl lg:text-4xl font-bold mb-4 text-center;
+  }
+
+  .subheading {
+    @apply text-gray-300 text-center text-balance max-w-2xl mx-auto mb-8;
+  }
+
+  .browse-button {
+    @apply bg-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded shadow;
+  }
+}
+
